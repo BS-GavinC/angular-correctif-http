@@ -1,0 +1,31 @@
+<input type="number" [(ngModel)]="id">
+
+<button (click)="searchById()">Search</button>
+
+<br>
+
+<p *ngIf="errorMessage">{{errorMessage}}</p>
+
+<p *ngIf="!selectedPokemon && isLoading">Loading...</p>
+
+<div *ngIf="selectedPokemon">
+
+  <h4>{{selectedPokemon.name}}</h4>
+
+  <p>id : {{selectedPokemon.id}}</p>
+
+
+  <app-types-pokemon [types]="selectedPokemon.types"></app-types-pokemon>
+
+
+  <app-stats-pokemon [stats]="selectedPokemon.stats"></app-stats-pokemon>
+
+
+
+  <app-moves-pokemon [moves]="selectedPokemon.moves"></app-moves-pokemon>
+
+</div>
+
+
+
+
